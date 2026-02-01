@@ -7,7 +7,6 @@ import {
   FileText,
   Briefcase,
   Wrench,
-  Database,
 } from "lucide-react";
 import {
   SiNextdotjs,
@@ -15,9 +14,11 @@ import {
   SiTypescript,
   SiJavascript,
   SiSupabase,
+  SiGit,
   SiX,
 } from "react-icons/si";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -62,8 +63,8 @@ export default function Home() {
           </div>
         </div>
       </header>
-
-      {/* Hero */}
+    
+      {/* Hero */}  
       <section className="px-6 py-20 sm:py-28 md:py-36">
         <div className="mx-auto max-w-3xl">
           <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
@@ -166,8 +167,25 @@ export default function Home() {
               className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               title="Pinecone"
             >
-              <Database className="size-10 transition-[color] group-hover:[color:#0081B4]" aria-hidden />
+              <Image
+                src="/pinecone-icon.svg"
+                alt="Pinecone"
+                width={40}
+                height={40}
+                className="size-10 object-contain opacity-70 transition-opacity group-hover:opacity-100 dark:invert"
+                aria-hidden
+              />
               <span className="text-sm font-medium">Pinecone</span>
+            </a>
+            <a
+              href="https://git-scm.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+              title="Git"
+            >
+              <SiGit className="size-10 transition-[color] group-hover:[color:#F05032]" aria-hidden />
+              <span className="text-sm font-medium">Git</span>
             </a>
           </div>
         </div>
