@@ -5,7 +5,6 @@ import {
   Github,
   Linkedin,
   FileText,
-  Code2,
   Briefcase,
   Sparkles,
   Wrench,
@@ -34,12 +33,6 @@ export default function Home() {
           </Link>
           <div className="flex items-center gap-2">
             <nav className="flex items-center gap-1" aria-label="Main">
-              <Link
-                href="#about"
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-              >
-                About
-              </Link>
               <Link
                 href="#skills"
                 className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
@@ -81,8 +74,10 @@ export default function Home() {
             Guddu Kumar
           </h1>
           <p className="mt-4 max-w-xl text-lg text-muted-foreground sm:text-xl">
-            Building reliable and scalable web applications with clean code and
-            thoughtful architecture.
+            I'm Guddu Kr. Pandit, a passionate full-stack developer who loves
+            building intuitive and powerful web applications. I enjoy combining
+            clean UI design with efficient backend logic to create experiences
+            that are useful, user-friendly, and modern.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button asChild size="lg" className="rounded-lg px-6 shadow-sm">
@@ -103,27 +98,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
+      {/* Tools */}
       <section
-        id="about"
+        id="tools"
         className="px-6 py-16 sm:py-20"
-        aria-labelledby="about-heading"
+        aria-labelledby="tools-heading"
       >
         <div className="mx-auto max-w-3xl">
           <h2
-            id="about-heading"
-            className="flex items-center gap-2 text-xl font-semibold text-foreground"
+            id="tools-heading"
+            className="mb-6 flex items-center gap-2 text-xl font-semibold text-foreground"
           >
-            <Code2 className="size-5 text-primary" aria-hidden />
-            About
+            <Wrench className="size-5 text-primary" aria-hidden />
+            Tools
           </h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed">
-            I build web applications with a focus on maintainability and
-            performance. I prioritize clean code, clear structure, and
-            thoughtful problem-solving. My work spans frontend interfaces,
-            backend logic, and database design—delivering features that work
-            reliably in production.
-          </p>
+          <div className="flex flex-wrap items-center gap-8">
+            <a
+              href="https://nextjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+              title="Next.js"
+            >
+              <SiNextdotjs className="size-10 transition-colors group-hover:text-foreground" aria-hidden />
+              <span className="text-sm font-medium">Next.js</span>
+            </a>
+            <a
+              href="https://react.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+              title="React"
+            >
+              <SiReact className="size-10 transition-[color] group-hover:[color:#61DAFB]" aria-hidden />
+              <span className="text-sm font-medium">React</span>
+            </a>
+            <a
+              href="https://www.typescriptlang.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+              title="TypeScript"
+            >
+              <SiTypescript className="size-10 transition-[color] group-hover:[color:#3178C6]" aria-hidden />
+              <span className="text-sm font-medium">TypeScript</span>
+            </a>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+              title="JavaScript"
+            >
+              <SiJavascript className="size-10 transition-[color] group-hover:[color:#F7DF1E]" aria-hidden />
+              <span className="text-sm font-medium">JavaScript</span>
+            </a>
+            <a
+              href="https://supabase.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+              title="Supabase"
+            >
+              <SiSupabase className="size-10 transition-[color] group-hover:[color:#3ECF8E]" aria-hidden />
+              <span className="text-sm font-medium">Supabase</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -165,75 +205,6 @@ export default function Home() {
                 PostgreSQL, Git, GitHub, Vercel
               </dd>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tools */}
-      <section
-        id="tools"
-        className="px-6 py-16 sm:py-20"
-        aria-labelledby="tools-heading"
-      >
-        <div className="mx-auto max-w-3xl">
-          <h2
-            id="tools-heading"
-            className="mb-6 flex items-center gap-2 text-xl font-semibold text-foreground"
-          >
-            <Wrench className="size-5 text-primary" aria-hidden />
-            Tools
-          </h2>
-          <div className="flex flex-wrap items-center gap-8">
-            <a
-              href="https://nextjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-              title="Next.js"
-            >
-              <SiNextdotjs className="size-10" aria-hidden />
-              <span className="text-sm font-medium">Next.js</span>
-            </a>
-            <a
-              href="https://react.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-              title="React"
-            >
-              <SiReact className="size-10" aria-hidden />
-              <span className="text-sm font-medium">React</span>
-            </a>
-            <a
-              href="https://www.typescriptlang.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-              title="TypeScript"
-            >
-              <SiTypescript className="size-10" aria-hidden />
-              <span className="text-sm font-medium">TypeScript</span>
-            </a>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-              title="JavaScript"
-            >
-              <SiJavascript className="size-10" aria-hidden />
-              <span className="text-sm font-medium">JavaScript</span>
-            </a>
-            <a
-              href="https://supabase.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-              title="Supabase"
-            >
-              <SiSupabase className="size-10" aria-hidden />
-              <span className="text-sm font-medium">Supabase</span>
-            </a>
           </div>
         </div>
       </section>
