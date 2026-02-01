@@ -6,8 +6,8 @@ import {
   Linkedin,
   FileText,
   Briefcase,
-  Sparkles,
   Wrench,
+  Database,
 } from "lucide-react";
 import {
   SiNextdotjs,
@@ -66,14 +66,10 @@ export default function Home() {
       {/* Hero */}
       <section className="px-6 py-20 sm:py-28 md:py-36">
         <div className="mx-auto max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-1.5 text-sm text-muted-foreground">
-            <Sparkles className="size-4 text-primary" aria-hidden />
-            Full-Stack Developer
-          </div>
           <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Guddu Kumar
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-muted-foreground sm:text-xl">
+          <p className="mt-4 w-full text-lg text-muted-foreground sm:text-xl">
             I'm Guddu Kr. Pandit, a passionate full-stack developer who loves
             building intuitive and powerful web applications. I enjoy combining
             clean UI design with efficient backend logic to create experiences
@@ -162,6 +158,16 @@ export default function Home() {
             >
               <SiSupabase className="size-10 transition-[color] group-hover:[color:#3ECF8E]" aria-hidden />
               <span className="text-sm font-medium">Supabase</span>
+            </a>
+            <a
+              href="https://www.pinecone.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+              title="Pinecone"
+            >
+              <Database className="size-10 transition-[color] group-hover:[color:#0081B4]" aria-hidden />
+              <span className="text-sm font-medium">Pinecone</span>
             </a>
           </div>
         </div>
