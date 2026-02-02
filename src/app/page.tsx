@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Mail, Github, Linkedin, FileText, ExternalLink, Wrench } from "lucide-react";
+import { Mail, Github, Linkedin, ExternalLink, Wrench } from "lucide-react";
 import {
   SiX,
   SiNextdotjs,
@@ -71,24 +71,6 @@ export default function Home() {
             Guddu Kumar
           </Link>
           <div className="flex items-center gap-2">
-            <Link
-              href="#tools"
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              Tools
-            </Link>
-            <Link
-              href="#projects"
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              Projects
-            </Link>
-            <Link
-              href="#contact"
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              Contact
-            </Link>
             <ThemeToggle />
           </div>
         </div>
@@ -109,17 +91,6 @@ export default function Home() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Button asChild size="lg" className="rounded-lg px-6 shadow-sm">
               <a href="mailto:guddukrp7661@gmail.com">Get in touch</a>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-lg">
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                <FileText className="size-4" aria-hidden />
-                Resume
-              </a>
             </Button>
           </div>
         </div>
