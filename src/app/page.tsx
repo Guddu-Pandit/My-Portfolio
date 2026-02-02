@@ -111,60 +111,42 @@ export default function Home() {
             Tools
           </h2>
           <div className="flex flex-wrap items-center gap-8">
-            <a
-              href="https://nextjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
               className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               title="Next.js"
             >
               <SiNextdotjs className="size-10 transition-colors group-hover:text-foreground" aria-hidden />
               <span className="text-sm font-medium">Next.js</span>
-            </a>
-            <a
-              href="https://react.dev"
-              target="_blank"
-              rel="noopener noreferrer"
+            </div>
+            <div
               className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               title="React"
             >
               <SiReact className="size-10 transition-[color] group-hover:[color:#61DAFB]" aria-hidden />
               <span className="text-sm font-medium">React</span>
-            </a>
-            <a
-              href="https://www.typescriptlang.org"
-              target="_blank"
-              rel="noopener noreferrer"
+            </div>
+            <div
               className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               title="TypeScript"
             >
               <SiTypescript className="size-10 transition-[color] group-hover:[color:#3178C6]" aria-hidden />
               <span className="text-sm font-medium">TypeScript</span>
-            </a>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-              target="_blank"
-              rel="noopener noreferrer"
+            </div>
+            <div
               className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               title="JavaScript"
             >
               <SiJavascript className="size-10 transition-[color] group-hover:[color:#F7DF1E]" aria-hidden />
               <span className="text-sm font-medium">JavaScript</span>
-            </a>
-            <a
-              href="https://supabase.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            </div>
+            <div
               className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               title="Supabase"
             >
               <SiSupabase className="size-10 transition-[color] group-hover:[color:#3ECF8E]" aria-hidden />
               <span className="text-sm font-medium">Supabase</span>
-            </a>
-            <a
-              href="https://www.pinecone.io"
-              target="_blank"
-              rel="noopener noreferrer"
+            </div>
+            <div
               className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               title="Pinecone"
             >
@@ -177,17 +159,14 @@ export default function Home() {
                 aria-hidden
               />
               <span className="text-sm font-medium">Pinecone</span>
-            </a>
-            <a
-              href="https://git-scm.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            </div>
+            <div
               className="group flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
               title="Git"
             >
               <SiGit className="size-10 transition-[color] group-hover:[color:#F05032]" aria-hidden />
               <span className="text-sm font-medium">Git</span>
-            </a>
+            </div>
           </div>
         </div>
       </section>
