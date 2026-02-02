@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Mail, Github, Linkedin, ExternalLink, Wrench } from "lucide-react";
+import { Mail, Github, Linkedin, ExternalLink, Wrench, ArrowRight } from "lucide-react";
 import {
   SiX,
   SiNextdotjs,
@@ -12,51 +12,7 @@ import {
 } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
-
-const projects = [
-  {
-    name: "Resume-Filter",
-    description:
-      "Premium AI-powered platform for resume management and analysis. Organize collections, gain deep insights with Google Gemini AI, and discover talent via semantic search and vector embeddings.",
-    href: "https://github.com/Guddu-Pandit/Resume-Filter",
-    tech: "JavaScript",
-  },
-  {
-    name: "Ecommerce-App",
-    description:
-      "Next.js based online shopping web application showcasing product listings and interactive UI, deployed live for users to explore a modern e-commerce interface.",
-    href: "https://github.com/Guddu-Pandit/Ecommerce-App",
-    tech: "TypeScript",
-  },
-  {
-    name: "Rag-App",
-    description:
-      "A modern Retrieval-Augmented Generation (RAG) chatbot built with Next.js, LangGraph, Pinecone, and Google Gemini. Upload documents to build your knowledge base and chat with AI.",
-    href: "https://github.com/Guddu-Pandit/Rag-App",
-    tech: "TypeScript",
-  },
-  {
-    name: "AirBnb-bot",
-    description:
-      "A powerful Slack integration enabling users to search Airbnb listings within Slack, using Playwright to scrape real-time data and return formatted titles, prices, ratings, and direct listing links.",
-    href: "https://github.com/Guddu-Pandit/AirBnb-bot",
-    tech: "JavaScript",
-  },
-  {
-    name: "Scraping-webpage",
-    description:
-      "A robust Node.js web scraping tool powered by Playwright & Puppeteer. Designed for high-reliability data extraction from real estate platforms while actively evading antiBot mechanisms.",
-    href: "https://github.com/Guddu-Pandit/Scraping-webpage",
-    tech: "JavaScript",
-  },
-  {
-    name: "TechStack",
-    description:
-      "A fast, user-friendly web app for managing documents, enabling users to upload, store, and automatically extract text from PDF and DOCX files.",
-    href: "https://github.com/Guddu-Pandit/TechStack",
-    tech: "TypeScript",
-  },
-];
+import { projects } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -65,7 +21,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
         <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-6">
           <Link
-            href="#"
+            href="/"
             className="text-lg font-semibold text-foreground hover:text-foreground/90"
           >
             Guddu Kumar
@@ -195,7 +151,7 @@ export default function Home() {
             </a>
           </p>
           <ul className="mt-10 grid gap-6 sm:grid-cols-2" role="list">
-            {projects.map((project) => (
+            {projects.slice(0, 4).map((project) => (
               <li key={project.name}>
                 <article className="group relative flex h-full flex-col rounded-xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-border/80 hover:bg-accent/30">
                   <div className="flex items-start justify-between gap-3">
@@ -233,6 +189,14 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <div className="mt-10 flex justify-center">
+            <Button asChild variant="outline" className="rounded-lg">
+              <Link href="/projects" className="flex items-center gap-2">
+                View All Projects
+                <ArrowRight className="size-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
