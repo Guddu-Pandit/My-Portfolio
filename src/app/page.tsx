@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-        <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-6">
+      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+        <div className="mx-auto flex h-14 max-w-3xl items-center justify-between border-b border-border/50 px-6">
           <Link
             href="/"
             className="text-lg font-semibold text-foreground hover:text-foreground/90"
@@ -55,10 +55,10 @@ export default function Home() {
       {/* Tools */}
       <section
         id="tools"
-        className="border-t border-border/50 px-6 py-16 sm:py-20"
+        className="px-6"
         aria-labelledby="tools-heading"
       >
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl border-t border-border/50 py-16 sm:py-20">
           <h2
             id="tools-heading"
             className="mb-6 flex items-center gap-2 text-xl font-semibold text-foreground"
@@ -130,17 +130,17 @@ export default function Home() {
       {/* Projects */}
       <section
         id="projects"
-        className="border-t border-border/50 px-6 py-16 sm:py-20"
+        className="px-6"
         aria-labelledby="projects-heading"
       >
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl border-t border-border/50 py-16 sm:py-20">
           <h2
             id="projects-heading"
             className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
           >
             Projects
           </h2>
-          <p className="mt-2 text-muted-foreground">
+          {/* <p className="mt-2 text-muted-foreground">
             <a
               href="https://github.com/Guddu-Pandit"
               target="_blank"
@@ -149,7 +149,7 @@ export default function Home() {
             >
               GitHub
             </a>
-          </p>
+          </p> */}
           <ul className="mt-10 grid gap-6 sm:grid-cols-2" role="list">
             {projects.slice(0, 4).map((project) => (
               <li key={project.name}>
@@ -203,10 +203,10 @@ export default function Home() {
       {/* Experience */}
       <section
         id="experience"
-        className="border-t border-border/50 px-6 py-16 sm:py-20"
+        className="px-6"
         aria-labelledby="experience-heading"
       >
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl border-t border-border/50 py-16 sm:py-20">
           <h2
             id="experience-heading"
             className="mb-8 flex items-center gap-2 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
@@ -248,10 +248,10 @@ export default function Home() {
       {/* Contact */}
       <section
         id="contact"
-        className="px-6 py-16 sm:py-20"
+        className="px-6"
         aria-labelledby="contact-heading"
       >
-        <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-6 sm:flex-row">
+        <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-6 border-t border-border/50 py-16 sm:flex-row sm:py-20">
           <span className="text-sm text-muted-foreground">
             © 2026 Guddu Kumar
           </span>

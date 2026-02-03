@@ -9,8 +9,8 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-        <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-6">
+      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+        <div className="mx-auto flex h-14 max-w-3xl items-center justify-between border-b border-border/50 px-6">
           <Link
             href="/"
             className="text-lg font-semibold text-foreground hover:text-foreground/90"
@@ -76,8 +76,8 @@ export default function ProjectsPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 px-6 py-12">
-        <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-6 sm:flex-row">
+      <footer className="px-6">
+        <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-6 border-t border-border/50 py-12 sm:flex-row">
           <span className="text-sm text-muted-foreground">
             © 2026 Guddu Kumar
           </span>
