@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Mail, Github, Linkedin, ExternalLink, Wrench, ArrowRight } from "lucide-react";
+import { Mail, Github, Linkedin, ExternalLink, Wrench, ArrowRight, Briefcase } from "lucide-react";
 import {
   SiX,
   SiNextdotjs,
@@ -12,7 +12,7 @@ import {
 } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
-import { projects } from "@/lib/data";
+import { projects, experiences } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -196,6 +196,51 @@ export default function Home() {
                 <ArrowRight className="size-4" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section
+        id="experience"
+        className="border-t border-border/50 px-6 py-16 sm:py-20"
+        aria-labelledby="experience-heading"
+      >
+        <div className="mx-auto max-w-3xl">
+          <h2
+            id="experience-heading"
+            className="mb-8 flex items-center gap-2 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
+          >
+            <Briefcase className="size-6 text-primary" aria-hidden />
+            Experience
+          </h2>
+          <div className="space-y-10">
+            {experiences.map((exp, index) => (
+              <div key={index} className="relative pl-8 before:absolute before:left-0 before:top-2 before:h-full before:w-px before:bg-border last:before:h-2">
+                <div className="absolute left-[-4px] top-2 size-2 rounded-full bg-primary" />
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                  <h3 className="text-lg font-bold text-foreground">
+                    {exp.title}
+                  </h3>
+                  <span className="text-sm font-medium text-muted-foreground">
+                    {exp.period}
+                  </span>
+                </div>
+                <div className="mt-1 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground">{exp.company}</span>
+                  <span>•</span>
+                  <span>{exp.location}</span>
+                </div>
+                <ul className="mt-4 space-y-2 text-sm text-muted-foreground" role="list">
+                  {exp.description.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-muted-foreground/30" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>

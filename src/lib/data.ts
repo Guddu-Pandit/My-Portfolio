@@ -42,3 +42,49 @@ export const projects = [
     tech: "TypeScript",
   },
 ];
+
+export const experiences = [
+  {
+    title: "Junior Software Development Engineer (Jr. SDE) – Internship",
+    company: "Excellence Technologies Pvt. Ltd.",
+    location: "Noida (On-site)",
+    period: "Dec 2025 – Present",
+    description: [
+      "Working as a Junior SDE with hands-on experience in JavaScript, React.js, and modern web technologies.",
+      "Contributing to real-world projects, feature development, and improving application performance.",
+      "Collaborating with senior developers and team members in an on-site development environment.",
+    ],
+  },
+  {
+    title: "Web Developer – Internship",
+    company: "Tech-Synergy Services",
+    location: "Hybrid",
+    period: "Mar 2025 – Sep 2025",
+    description: [
+      "Developed and maintained responsive web applications using JavaScript, HTML5, and related technologies.",
+      "Worked on UI enhancements, bug fixes, and performance optimization.",
+      "Gained experience in hybrid work culture and cross-team collaboration.",
+    ],
+  },
+  {
+    title: "Java Developer – Internship",
+    company: "OctaNet Services Pvt. Ltd.",
+    location: "Remote",
+    period: "Jul 2024 – Sep 2024",
+    description: [
+      "Built and tested Java-based applications.",
+      "Strengthened core concepts of Java, OOPs, and backend logic.",
+      "Worked in a remote development setup with structured deliverables.",
+    ],
+  },
+  {
+    title: "Java Developer – Internship",
+    company: "Oasis Infobyte",
+    location: "Remote",
+    period: "Apr 2024 – May 2024",
+    description: [
+      "Developed basic Java applications and practiced problem-solving using Java.",
+      "Learned industry-standard coding practices and version control basics.",
+    ],
+  },
+];
