@@ -1,5 +1,5 @@
+import { ExperienceSection } from "@/components/experience-section";
 import { MacShell } from "@/components/mac-shell";
-import { ContributionGraph } from "@/components/contribution-graph";
 import {
   Mail,
   Github,
@@ -22,7 +22,7 @@ import {
 } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
-import { projects, experiences } from "@/lib/data";
+import { projects } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
 const linkTileClass =
@@ -31,18 +31,18 @@ const linkTileClass =
 export default function Home() {
   return (
     <MacShell>
-      {/* Profile */}
-      <section className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
-        <Image
-          src="https://github.com/Guddu-Pandit.png"
-          alt="Guddu Kumar"
-          width={96}
-          height={96}
-          className="size-20 shrink-0 rounded-lg border border-[var(--mac-window-border)] object-cover sm:size-24"
-          priority
-        />
-        <div className="min-w-0 flex-1 space-y-3">
-          <div>
+      {/* Profile: header row (avatar + meta), full-width bio below — aligned with reference layout */}
+      <section className="flex flex-col gap-8 sm:gap-10">
+        <div className="flex flex-row items-start gap-4 sm:gap-8">
+          <Image
+            src="https://github.com/Guddu-Pandit.png"
+            alt="Guddu Kumar"
+            width={96}
+            height={96}
+            className="size-20 shrink-0 rounded-lg border border-[var(--mac-window-border)] object-cover sm:size-24"
+            priority
+          />
+          <div className="min-w-0 flex-1 space-y-0">
             <h1 className="flex flex-wrap items-center gap-2 text-xl font-bold tracking-tight text-[var(--mac-fg)] sm:text-2xl">
               Guddu Kumar
               <BadgeCheck
@@ -61,18 +61,19 @@ export default function Home() {
               <span className="text-[var(--mac-fg)]">status:</span> employed
             </p>
           </div>
-          <p className="max-w-xl text-sm leading-relaxed text-[var(--mac-fg)]/90 sm:text-[15px]">
+        </div>
+        <div className="w-full min-w-0 space-y-4 text-sm leading-relaxed text-[var(--mac-fg)]/90 sm:text-[15px]">
+          <p>
             I&apos;m Guddu Kr. Pandit, a passionate full-stack developer who
-            loves building intuitive and powerful web applications. I enjoy
-            combining clean UI design with efficient backend logic to create
-            experiences that are useful, user-friendly, and modern.
-          </p>
+            loves building intuitive and powerful web applications.I enjoy combining clean UI design with efficient backend logic to
+            create experiences that are useful, user-friendly, and modern.
+          </p>  
         </div>
       </section>
 
       {/* Link grid */}
       <nav
-        className="mt-10 grid grid-cols-2 gap-2 sm:grid-cols-4"
+        className="mt-10 mb-6 grid grid-cols-2 gap-2 sm:grid-cols-4"
         aria-label="Social and page links"
       >
         <a
@@ -124,8 +125,6 @@ export default function Home() {
         </a>
       </nav>
 
-      <ContributionGraph />
-
       {/* Tools */}
       <section
         id="tools"
@@ -134,11 +133,11 @@ export default function Home() {
       >
         <h2
           id="tools-heading"
-          className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--mac-muted)]"
+          className="mb-6 text-xs font-semibold uppercase tracking-widest text-[var(--mac-muted)]"
         >
           Tools
         </h2>
-        <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+        <div className="flex flex-wrap items-center gap-6 sm:gap-8 mb-5">
           <div
             className="group flex flex-col items-center gap-2 text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
             title="Next.js"
@@ -272,7 +271,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <div className="mt-6 flex justify-center">
+        <div className="mt-6 mb-5 flex justify-center">
           <Button
             asChild
             variant="outline"
@@ -286,61 +285,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience */}
-      <section
-        id="experience"
-        className="border-t border-[var(--mac-window-border)] pt-8 sm:pt-10"
-        aria-labelledby="experience-heading"
-      >
-        <h2
-          id="experience-heading"
-          className="mb-6 text-xs font-semibold uppercase tracking-widest text-[var(--mac-muted)]"
-        >
-          Experience
-        </h2>
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="relative border-l border-[var(--mac-window-border)] pl-6"
-            >
-              <div
-                className="absolute -left-px top-1 size-2 -translate-x-1/2 rounded-full bg-[var(--mac-status)]"
-                aria-hidden
-              />
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="text-sm font-bold text-[var(--mac-fg)] sm:text-base">
-                  {exp.title}
-                </h3>
-                <span className="text-xs text-[var(--mac-muted)] sm:text-sm">
-                  {exp.period}
-                </span>
-              </div>
-              <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-[var(--mac-muted)] sm:text-sm">
-                <span className="font-medium text-[var(--mac-fg)]">
-                  {exp.company}
-                </span>
-                <span aria-hidden>•</span>
-                <span>{exp.location}</span>
-              </div>
-              <ul
-                className="mt-3 space-y-2 text-xs text-[var(--mac-muted)] sm:text-sm"
-                role="list"
-              >
-                {exp.description.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span
-                      className="mt-1.5 size-1 shrink-0 rounded-full bg-[var(--mac-muted)]/40"
-                      aria-hidden
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ExperienceSection />
 
       {/* Contact / footer */}
       <footer
