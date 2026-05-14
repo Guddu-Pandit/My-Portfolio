@@ -14,7 +14,7 @@ export function MacShell({ children, className }: MacShellProps) {
         className,
       )}
     >
-      <div className="mx-auto w-full max-w-3xl">
+      <div className="mx-auto w-full max-w-4xl">
         <div
           className={cn(
             "overflow-hidden rounded-lg border border-[var(--mac-window-border)]",

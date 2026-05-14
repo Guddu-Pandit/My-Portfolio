@@ -1,5 +1,5 @@
+import { ExperienceSection } from "@/components/experience-section";
 import { MacShell } from "@/components/mac-shell";
-import { ContributionGraph } from "@/components/contribution-graph";
 import {
   Mail,
   Github,
@@ -22,7 +22,7 @@ import {
 } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
-import { projects, experiences } from "@/lib/data";
+import { projects } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
 const linkTileClass =
@@ -73,7 +73,7 @@ export default function Home() {
 
       {/* Link grid */}
       <nav
-        className="mt-10 grid grid-cols-2 gap-2 sm:grid-cols-4"
+        className="mt-10 mb-6 grid grid-cols-2 gap-2 sm:grid-cols-4"
         aria-label="Social and page links"
       >
         <a
@@ -125,8 +125,6 @@ export default function Home() {
         </a>
       </nav>
 
-      <ContributionGraph />
-
       {/* Tools */}
       <section
         id="tools"
@@ -135,11 +133,11 @@ export default function Home() {
       >
         <h2
           id="tools-heading"
-          className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--mac-muted)]"
+          className="mb-6 text-xs font-semibold uppercase tracking-widest text-[var(--mac-muted)]"
         >
           Tools
         </h2>
-        <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+        <div className="flex flex-wrap items-center gap-6 sm:gap-8 mb-5">
           <div
             className="group flex flex-col items-center gap-2 text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
             title="Next.js"
@@ -273,7 +271,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <div className="mt-6 flex justify-center">
+        <div className="mt-6 mb-5 flex justify-center">
           <Button
             asChild
             variant="outline"
@@ -287,61 +285,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience */}
-      <section
-        id="experience"
-        className="border-t border-[var(--mac-window-border)] pt-8 sm:pt-10"
-        aria-labelledby="experience-heading"
-      >
-        <h2
-          id="experience-heading"
-          className="mb-6 text-xs font-semibold uppercase tracking-widest text-[var(--mac-muted)]"
-        >
-          Experience
-        </h2>
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="relative border-l border-[var(--mac-window-border)] pl-6"
-            >
-              <div
-                className="absolute -left-px top-1 size-2 -translate-x-1/2 rounded-full bg-[var(--mac-status)]"
-                aria-hidden
-              />
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="text-sm font-bold text-[var(--mac-fg)] sm:text-base">
-                  {exp.title}
-                </h3>
-                <span className="text-xs text-[var(--mac-muted)] sm:text-sm">
-                  {exp.period}
-                </span>
-              </div>
-              <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-[var(--mac-muted)] sm:text-sm">
-                <span className="font-medium text-[var(--mac-fg)]">
-                  {exp.company}
-                </span>
-                <span aria-hidden>•</span>
-                <span>{exp.location}</span>
-              </div>
-              <ul
-                className="mt-3 space-y-2 text-xs text-[var(--mac-muted)] sm:text-sm"
-                role="list"
-              >
-                {exp.description.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span
-                      className="mt-1.5 size-1 shrink-0 rounded-full bg-[var(--mac-muted)]/40"
-                      aria-hidden
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ExperienceSection />
 
       {/* Contact / footer */}
       <footer
