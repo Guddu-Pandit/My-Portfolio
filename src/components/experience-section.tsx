@@ -5,6 +5,34 @@ import { useId, useState } from "react";
 import { experiences } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
+function isOngoingPeriod(period: string) {
+  return /[–—-]\s*Present\s*$/i.test(period.trim());
+}
+
+function CurrentBadge() {
+  return (
+    <span
+      className="inline-flex shrink-0 items-center rounded-md border border-[var(--mac-status)]/45 bg-[var(--mac-status)]/15 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--mac-status)] sm:text-[11px]"
+      title="Current role"
+    >
+      Current
+    </span>
+  );
+}
+
+/** Badge after title when period ends with "– Present" (any such role). */
+function ExperienceTitle({ title, period }: { title: string; period: string }) {
+  if (isOngoingPeriod(period)) {
+    return (
+      <>
+        <span>{title}</span>
+        <CurrentBadge />
+      </>
+    );
+  }
+  return <>{title}</>;
+}
+
 export function ExperienceSection() {
   const [expanded, setExpanded] = useState(false);
   const listId = useId();
@@ -34,8 +62,8 @@ export function ExperienceSection() {
               aria-hidden
             />
             <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-              <h3 className="text-sm font-bold text-[var(--mac-fg)] sm:text-base">
-                {exp.title}
+              <h3 className="flex flex-wrap items-center gap-2 text-sm font-bold text-[var(--mac-fg)] sm:text-base">
+                <ExperienceTitle title={exp.title} period={exp.period} />
               </h3>
               <span className="text-xs text-[var(--mac-muted)] sm:text-sm">
                 {exp.period}
