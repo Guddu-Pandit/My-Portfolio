@@ -31,18 +31,18 @@ const linkTileClass =
 export default function Home() {
   return (
     <MacShell>
-      {/* Profile */}
-      <section className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
-        <Image
-          src="https://github.com/Guddu-Pandit.png"
-          alt="Guddu Kumar"
-          width={96}
-          height={96}
-          className="size-20 shrink-0 rounded-lg border border-[var(--mac-window-border)] object-cover sm:size-24"
-          priority
-        />
-        <div className="min-w-0 flex-1 space-y-3">
-          <div>
+      {/* Profile: header row (avatar + meta), full-width bio below — aligned with reference layout */}
+      <section className="flex flex-col gap-8 sm:gap-10">
+        <div className="flex flex-row items-start gap-4 sm:gap-8">
+          <Image
+            src="https://github.com/Guddu-Pandit.png"
+            alt="Guddu Kumar"
+            width={96}
+            height={96}
+            className="size-20 shrink-0 rounded-lg border border-[var(--mac-window-border)] object-cover sm:size-24"
+            priority
+          />
+          <div className="min-w-0 flex-1 space-y-0">
             <h1 className="flex flex-wrap items-center gap-2 text-xl font-bold tracking-tight text-[var(--mac-fg)] sm:text-2xl">
               Guddu Kumar
               <BadgeCheck
@@ -61,12 +61,13 @@ export default function Home() {
               <span className="text-[var(--mac-fg)]">status:</span> employed
             </p>
           </div>
-          <p className="max-w-xl text-sm leading-relaxed text-[var(--mac-fg)]/90 sm:text-[15px]">
+        </div>
+        <div className="w-full min-w-0 space-y-4 text-sm leading-relaxed text-[var(--mac-fg)]/90 sm:text-[15px]">
+          <p>
             I&apos;m Guddu Kr. Pandit, a passionate full-stack developer who
-            loves building intuitive and powerful web applications. I enjoy
-            combining clean UI design with efficient backend logic to create
-            experiences that are useful, user-friendly, and modern.
-          </p>
+            loves building intuitive and powerful web applications.I enjoy combining clean UI design with efficient backend logic to
+            create experiences that are useful, user-friendly, and modern.
+          </p>  
         </div>
       </section>
 
