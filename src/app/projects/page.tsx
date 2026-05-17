@@ -7,7 +7,7 @@ import { projects } from "@/lib/data";
 
 export default function ProjectsPage() {
   return (
-    <MacShell>
+    <MacShell headerLink={{ href: "/", label: "Home" }}>
       <div className="space-y-2">
         <h1 className="text-xl font-bold tracking-tight text-[var(--mac-fg)] sm:text-2xl">
           Projects
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
         ))}
       </ul>
 
-      <div className="mt-8 flex justify-center border-t border-[var(--mac-window-border)] pt-8">
+      <div className=" mb-6 flex justify-center  pt-8">
         <Button
           asChild
           variant="outline"

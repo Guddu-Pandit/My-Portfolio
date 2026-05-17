@@ -45,21 +45,10 @@ export const projects = [
 
 export const experiences = [
   {
-    title: "Jr. Software Developer Trainee – Apprenticeship",
+    title: "Jr. SDE - Trainee",
     company: "Excellence Technologies Pvt. Ltd.",
     location: "A 162, Sector-83, Noida (On-site)",
-    period: "Feb 2026 – Present",
-    description: [
-      "Working as a Jr. Software Developer Trainee with hands-on exposure to Azure Databricks, Openclaw, and other enterprise tools.",
-      "Actively contributing to real-world development tasks in a structured apprenticeship program.",
-      "Developing skills in cloud-based data engineering and full stack application development.",
-    ],
-  },
-  {
-    title: "Junior Software Development Engineer (Jr. SDE) – Internship",
-    company: "Excellence Technologies Pvt. Ltd.",
-    location: "A 162, Sector-83, Noida (On-site)",
-    period: "Dec 2025 – Jan 2026",
+    period: "Dec 2025 – Present",
     description: [
       "Working as a Junior SDE with hands-on experience in JavaScript, React.js, and modern web technologies.",
       "Contributing to real-world projects, feature development, and improving application performance.",

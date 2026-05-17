@@ -1,12 +1,21 @@
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
+import { FolderCode } from "lucide-react";
+import Link from "next/link";
 
 type MacShellProps = {
   children: React.ReactNode;
   className?: string;
+  headerLink?: { href: string; label: string };
 };
 
-export function MacShell({ children, className }: MacShellProps) {
+const defaultHeaderLink = { href: "/projects", label: "Projects" };
+
+export function MacShell({
+  children,
+  className,
+  headerLink = defaultHeaderLink,
+}: MacShellProps) {
   return (
     <div
       className={cn(
@@ -32,7 +41,16 @@ export function MacShell({ children, className }: MacShellProps) {
               <span className="size-3 rounded-full bg-[#febc2e]" />
               <span className="size-3 rounded-full bg-[#28c840]" />
             </div>
-            <ThemeToggle className="size-10 rounded-md border-0 bg-transparent text-[var(--mac-muted)] shadow-none hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]" />
+            <div className="flex items-center gap-1">
+              <Link
+                href={headerLink.href}
+                className="flex items-center gap-2 rounded-md px-2.5 py-2 text-sm text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
+              >
+                <FolderCode className="size-4 shrink-0" aria-hidden />
+                {headerLink.label}
+              </Link>
+              <ThemeToggle className="size-10 rounded-md border-0 bg-transparent text-[var(--mac-muted)] shadow-none hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]" />
+            </div>
           </div>
           <div className="p-4 sm:p-6">{children}</div>
         </div>

@@ -5,9 +5,7 @@ import {
   Github,
   Linkedin,
   ExternalLink,
-  Wrench,
   ArrowRight,
-  Briefcase,
   BadgeCheck,
   FolderCode,
 } from "lucide-react";
@@ -32,7 +30,7 @@ export default function Home() {
   return (
     <MacShell>
       {/* Profile: header row (avatar + meta), full-width bio below — aligned with reference layout */}
-      <section className="flex flex-col gap-8 sm:gap-10">
+      <section className="flex flex-col gap-8 mb-5 sm:gap-10">
         <div className="flex flex-row items-start gap-4 sm:gap-8">
           <Image
             src="https://github.com/Guddu-Pandit.png"
@@ -71,59 +69,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Link grid */}
-      <nav
-        className="mt-10 mb-6 grid grid-cols-2 gap-2 sm:grid-cols-4"
-        aria-label="Social and page links"
-      >
-        <a
-          href="https://x.com/guddukrpandit"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={linkTileClass}
-        >
-          <SiX className="size-4" aria-hidden />
-          X
-        </a>
-        <a
-          href="https://www.linkedin.com/in/guddu-pandit"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={linkTileClass}
-        >
-          <Linkedin className="size-4" aria-hidden />
-          LinkedIn
-        </a>
-        <a
-          href="https://github.com/Guddu-Pandit"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={linkTileClass}
-        >
-          <Github className="size-4" aria-hidden />
-          GitHub
-        </a>
-        <a href="mailto:guddukrp7661@gmail.com" className={linkTileClass}>
-          <Mail className="size-4" aria-hidden />
-          Email
-        </a>
-        <Link href="/projects" className={linkTileClass}>
-          <FolderCode className="size-4" aria-hidden />
-          Projects
-        </Link>
-        <a href="#experience" className={linkTileClass}>
-          <Briefcase className="size-4" aria-hidden />
-          Experience
-        </a>
-        <a href="#tools" className={linkTileClass}>
-          <Wrench className="size-4" aria-hidden />
-          Tools
-        </a>
-        <a href="#contact" className={linkTileClass}>
-          <Mail className="size-4" aria-hidden />
-          Contact
-        </a>
-      </nav>
+ 
+       
 
       {/* Tools */}
       <section
