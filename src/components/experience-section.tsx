@@ -1,9 +1,4 @@
-"use client";
-
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { useId, useState } from "react";
 import { experiences } from "@/lib/data";
-import { Button } from "@/components/ui/button";
 
 function isOngoingPeriod(period: string) {
   return /[–—-]\s*Present\s*$/i.test(period.trim());
@@ -34,11 +29,6 @@ function ExperienceTitle({ title, period }: { title: string; period: string }) {
 }
 
 export function ExperienceSection() {
-  const [expanded, setExpanded] = useState(false);
-  const listId = useId();
-  const visible = expanded ? experiences : experiences.slice(0, 1);
-  const canToggle = experiences.length > 1;
-
   return (
     <section
       id="experience"
@@ -51,8 +41,8 @@ export function ExperienceSection() {
       >
         Experience
       </h2>
-      <div id={listId} className="mb-5 space-y-8">
-        {visible.map((exp, index) => (
+      <div className="mb-5 space-y-8">
+        {experiences.map((exp, index) => (
           <div
             key={`${exp.title}-${exp.period}-${index}`}
             className="relative border-l border-[var(--mac-window-border)] pl-6"
@@ -93,30 +83,6 @@ export function ExperienceSection() {
           </div>
         ))}
       </div>
-      {canToggle ? (
-        <div className="flex mb-5 justify-center">
-          <Button
-            type="button"
-            variant="outline"
-            aria-expanded={expanded}
-            aria-controls={listId}
-            onClick={() => setExpanded((e) => !e)}
-            className="flex items-center gap-2 rounded-lg border-[var(--mac-window-border)] bg-transparent font-mono text-[var(--mac-fg)] hover:bg-[var(--mac-elevated)]"
-          >
-            {expanded ? (
-              <>
-                Show less
-                <ChevronUp className="size-4" aria-hidden />
-              </>
-            ) : (
-              <>
-                Show more
-                <ChevronDown className="size-4" aria-hidden />
-              </>
-            )}
-          </Button>
-        </div>
-      ) : null}
     </section>
   );
 }
