@@ -1,3 +1,5 @@
+import { MdDescription } from "react-icons/md";
+
 export const projects = [
   {
     name: "Resume-Filter",
@@ -7,11 +9,10 @@ export const projects = [
     tech: "JavaScript",
   },
   {
-    name: "Ecommerce-App",
-    description:
-      "Next.js based online shopping web application showcasing product listings and interactive UI, deployed live for users to explore a modern e-commerce interface.",
-    href: "https://github.com/Guddu-Pandit/Ecommerce-App",
-    tech: "TypeScript",
+    name: "Slackbot-Azure-Databricks",
+    description: "A Node.js Slack bot that lets users query Databricks data using plain English. Natural language questions are automatically converted to SQL via the Databricks Genie API, executed on Databricks SQL, and returned as formatted results directly in Slack — via DM or @mention.",
+    href: "https://github.com/Guddu-Pandit/Slackbot-Azure-Databricks",
+    tech: "JavaScript",
   },
   {
     name: "Rag-App",
@@ -26,6 +27,13 @@ export const projects = [
       "A powerful Slack integration enabling users to search Airbnb listings within Slack, using Playwright to scrape real-time data and return formatted titles, prices, ratings, and direct listing links.",
     href: "https://github.com/Guddu-Pandit/AirBnb-bot",
     tech: "JavaScript",
+  },
+  {
+    name: "Ecommerce-App",
+    description:
+      "Next.js based online shopping web application showcasing product listings and interactive UI, deployed live for users to explore a modern e-commerce interface.",
+    href: "https://github.com/Guddu-Pandit/Ecommerce-App",
+    tech: "TypeScript",
   },
   {
     name: "Scraping-webpage",
