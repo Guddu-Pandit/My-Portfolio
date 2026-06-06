@@ -150,3 +150,48 @@ html.dark {
     @apply bg-background text-foreground;
   }
 }
+
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+}
+
+.status-dot--employed {
+  background-color: var(--mac-status);
+  animation: status-glow-employed 2.2s ease-in-out infinite;
+}
+
+.status-dot--unemployed {
+  background-color: #ff5f57;
+  animation: status-glow-unemployed 2.2s ease-in-out infinite;
+}
+
+@keyframes status-glow-employed {
+  0%,
+  100% {
+    box-shadow:
+      0 0 4px var(--mac-status),
+      0 0 10px color-mix(in srgb, var(--mac-status) 45%, transparent);
+  }
+  50% {
+    box-shadow:
+      0 0 8px var(--mac-status),
+      0 0 18px color-mix(in srgb, var(--mac-status) 65%, transparent);
+  }
+}
+
+@keyframes status-glow-unemployed {
+  0%,
+  100% {
+    box-shadow:
+      0 0 4px #ff5f57,
+      0 0 10px rgb(255 95 87 / 45%);
+  }
+  50% {
+    box-shadow:
+      0 0 8px #ff5f57,
+      0 0 18px rgb(255 95 87 / 65%);
+  }
+}

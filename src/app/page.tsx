@@ -55,7 +55,7 @@ export default function Home() {
             </p>
             <p className="mt-2 flex items-center gap-2 text-xs text-[var(--mac-muted)] sm:text-sm">
               <span
-                className={`size-2 shrink-0 rounded-full ${isEmployed ? "bg-[var(--mac-status)]" : "bg-[#ff5f57]"}`}
+                className={`status-dot ${isEmployed ? "status-dot--employed" : "status-dot--unemployed"}`}
                 aria-hidden
               />
               <span className="text-[var(--mac-fg)]">status:</span>{" "}
