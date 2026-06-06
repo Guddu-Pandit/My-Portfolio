@@ -51,6 +51,14 @@ export const projects = [
   },
 ];
 
+export function isOngoingPeriod(period: string) {
+  return /[–—-]\s*Present\s*$/i.test(period.trim());
+}
+
+export function hasCurrentExperience() {
+  return experiences.some((exp) => isOngoingPeriod(exp.period));
+}
+
 export const experiences = [
   {
     title: "Jr. SDE - Trainee",
