@@ -20,13 +20,15 @@ import {
 } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
-import { projects } from "@/lib/data";
+import { hasCurrentExperience, projects } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
 const linkTileClass =
   "flex items-center gap-2 rounded-lg border border-[var(--mac-window-border)] bg-[var(--mac-elevated)] px-3 py-2.5 text-sm text-[var(--mac-fg)] transition-colors hover:border-[var(--mac-muted)]/50 hover:bg-[var(--mac-titlebar-bg)] [&_svg]:shrink-0";
 
 export default function Home() {
+  const isEmployed = hasCurrentExperience();
+
   return (
     <MacShell>
       {/* Profile: header row (avatar + meta), full-width bio below — aligned with reference layout */}
@@ -53,10 +55,11 @@ export default function Home() {
             </p>
             <p className="mt-2 flex items-center gap-2 text-xs text-[var(--mac-muted)] sm:text-sm">
               <span
-                className="size-2 shrink-0 rounded-full bg-[var(--mac-status)]"
+                className={`status-dot ${isEmployed ? "status-dot--employed" : "status-dot--unemployed"}`}
                 aria-hidden
               />
-              <span className="text-[var(--mac-fg)]">status:</span> employed
+              <span className="text-[var(--mac-fg)]">status:</span>{" "}
+              {isEmployed ? "employed" : "unemployed"}
             </p>
           </div>
         </div>

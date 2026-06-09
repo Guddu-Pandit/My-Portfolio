@@ -51,12 +51,20 @@ export const projects = [
   },
 ];
 
+export function isOngoingPeriod(period: string) {
+  return /[–—-]\s*Present\s*$/i.test(period.trim());
+}
+
+export function hasCurrentExperience() {
+  return experiences.some((exp) => isOngoingPeriod(exp.period));
+}
+
 export const experiences = [
   {
     title: "Jr. SDE - Trainee",
     company: "Excellence Technologies Pvt. Ltd.",
     location: "A 162, Sector-83, Noida (On-site)",
-    period: "Dec 2025 – Present",
+    period: "Mar 2025 – Mar 2026",
     description: [
       "Working as a Junior SDE with hands-on experience in JavaScript, React.js, and modern web technologies.",
       "Contributing to real-world projects, feature development, and improving application performance.",
@@ -67,7 +75,7 @@ export const experiences = [
     title: "Web Developer – Internship",
     company: "Tech-Synergy Services",
     location: "Hybrid",
-    period: "Mar 2025 – Sep 2025",
+    period: "Nov 2024 – Feb 2025",
     description: [
       "Developed and maintained responsive web applications using JavaScript, HTML5, and related technologies.",
       "Worked on UI enhancements, bug fixes, and performance optimization.",

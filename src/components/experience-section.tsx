@@ -1,8 +1,4 @@
-import { experiences } from "@/lib/data";
-
-function isOngoingPeriod(period: string) {
-  return /[–—-]\s*Present\s*$/i.test(period.trim());
-}
+import { experiences, isOngoingPeriod } from "@/lib/data";
 
 function CurrentBadge() {
   return (
