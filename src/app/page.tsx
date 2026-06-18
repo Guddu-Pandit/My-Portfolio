@@ -1,4 +1,5 @@
 import { ExperienceSection } from "@/components/experience-section";
+import { GitHubContributions } from "@/components/github-contributions";
 import { MacShell } from "@/components/mac-shell";
 import {
   Mail,
@@ -234,6 +235,8 @@ export default function Home() {
           </Button>
         </div>
       </section>
+
+      <GitHubContributions />
 
       <ExperienceSection />
 
