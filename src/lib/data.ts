@@ -9,6 +9,13 @@ export const projects = [
     tech: "JavaScript",
   },
   {
+    name: "EduSlide",
+    description:
+    "EduSlide turns documents (PDF, DOCX, TXT) into ready-to-edit slide decks. Upload a document, let AI generate a structured presentation from its content, then preview, edit, and export it as a PPTX file.",
+    href: "https://github.com/Guddu-Pandit/EduSlide",
+    tech: "TypeScript",
+  },
+  {
     name: "Slackbot-Azure-Databricks",
     description: "A Node.js Slack bot that lets users query Databricks data using plain English. Natural language questions are automatically converted to SQL via the Databricks Genie API, executed on Databricks SQL, and returned as formatted results directly in Slack — via DM or @mention.",
     href: "https://github.com/Guddu-Pandit/Slackbot-Azure-Databricks",
@@ -17,7 +24,7 @@ export const projects = [
   {
     name: "Rag-App",
     description:
-      "A modern Retrieval-Augmented Generation (RAG) chatbot built with Next.js, LangGraph, Pinecone, and Google Gemini. Upload documents to build your knowledge base and chat with AI.",
+      "A modern Retrieval-Augmented Generation (RAG) chatbot built with Next.js, LangGraph, Pinecone, and Google Gemini. Upload documents to build your knowledge base and chat with AI that answers based on your content.",
     href: "https://github.com/Guddu-Pandit/Rag-App",
     tech: "TypeScript",
   },
