@@ -68,10 +68,21 @@ export function hasCurrentExperience() {
 
 export const experiences = [
   {
+    title: "Software Engineer",
+    company: "Mayking Technology Pvt. Ltd.",
+    location: "Mumbai,Maharashtra (Remote)",
+    period: "July 2026 – Present",
+    description: [
+      "Working as a Software Engineer with hands-on experience in JavaScript, React.js, and modern web technologies.",
+      "Contributing to real-world projects, feature development, and improving application performance.",
+      "Collaborating with senior developers and team members in a remote development environment.", 
+    ],
+  },
+  {
     title: "Jr. SDE - Trainee",
     company: "Excellence Technologies Pvt. Ltd.",
     location: "A 162, Sector-83, Noida (On-site)",
-    period: "Mar 2025 – Mar 2026",
+    period: "Feb 2025 – Mar 2026",
     description: [
       "Working as a Junior SDE with hands-on experience in JavaScript, React.js, and modern web technologies.",
       "Contributing to real-world projects, feature development, and improving application performance.",
