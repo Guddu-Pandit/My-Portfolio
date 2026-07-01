@@ -146,9 +146,54 @@ html.dark {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
+  ::selection {
+    background-color: color-mix(in srgb, var(--mac-status) 35%, transparent);
+    color: var(--mac-fg);
+  }
+}
+
+/* Slim, unobtrusive scrollbar for horizontally-scrollable content (e.g. contribution graph) */
+.mac-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mac-muted) transparent;
+}
+.mac-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.mac-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.mac-scroll::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--mac-muted) 45%, transparent);
+  border-radius: 9999px;
+}
+
+/* Reusable lift-on-hover treatment for cards and tiles */
+.card-hover {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -12px color-mix(in srgb, var(--mac-fg) 25%, transparent);
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--mac-status);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
 .status-dot {
@@ -193,5 +238,51 @@ html.dark {
     box-shadow:
       0 0 8px #ff5f57,
       0 0 18px rgb(255 95 87 / 65%);
+  }
+}
+
+/* Current-role timeline dot: rises up from below, then blinks a few times before restarting. */
+.experience-dot--current {
+  animation: experience-dot-rise-blink 3.6s ease-in-out infinite;
+}
+
+@keyframes experience-dot-rise-blink {
+  0% {
+    transform: translate(-50%, 10px);
+    opacity: 1;
+  }
+  45%,
+  50% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  57% {
+    opacity: 0.15;
+  }
+  64% {
+    opacity: 1;
+  }
+  71% {
+    opacity: 0.15;
+  }
+  78% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.15;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-dot--current {
+    animation: none;
+    transform: translate(-50%, 0);
   }
 }

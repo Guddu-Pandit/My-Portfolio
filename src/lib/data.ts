@@ -1,4 +1,11 @@
-import { MdDescription } from "react-icons/md";
+const techColors: Record<string, string> = {
+  JavaScript: "#F7DF1E",
+  TypeScript: "#3178C6",
+};
+
+export function techAccentColor(tech: string) {
+  return techColors[tech] ?? "var(--mac-muted)";
+}
 
 export const projects = [
   {

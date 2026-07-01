@@ -21,11 +21,8 @@ import {
 } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
-import { hasCurrentExperience, projects } from "@/lib/data";
+import { hasCurrentExperience, projects, techAccentColor } from "@/lib/data";
 import { Button } from "@/components/ui/button";
-
-const linkTileClass =
-  "flex items-center gap-2 rounded-lg border border-[var(--mac-window-border)] bg-[var(--mac-elevated)] px-3 py-2.5 text-sm text-[var(--mac-fg)] transition-colors hover:border-[var(--mac-muted)]/50 hover:bg-[var(--mac-titlebar-bg)] [&_svg]:shrink-0";
 
 export default function Home() {
   const isEmployed = hasCurrentExperience();
@@ -33,16 +30,22 @@ export default function Home() {
   return (
     <MacShell>
       {/* Profile: header row (avatar + meta), full-width bio below — aligned with reference layout */}
-      <section className="flex flex-col gap-8 mb-5 sm:gap-10">
+      <section className="animate-in fade-in slide-in-from-bottom-4 mb-5 flex flex-col gap-8 duration-700 fill-mode-both sm:gap-10">
         <div className="flex flex-row items-start gap-4 sm:gap-8">
-          <Image
-            src="https://github.com/Guddu-Pandit.png"
-            alt="Guddu Kumar"
-            width={96}
-            height={96}
-            className="size-20 shrink-0 rounded-lg border border-[var(--mac-window-border)] object-cover sm:size-24"
-            priority
-          />
+          <div className="relative shrink-0">
+            <div
+              className="absolute -inset-0.5 rounded-lg bg-gradient-to-br from-[var(--mac-status)] to-transparent opacity-40 blur-sm"
+              aria-hidden
+            />
+            <Image
+              src="https://github.com/Guddu-Pandit.png"
+              alt="Guddu Kumar"
+              width={96}
+              height={96}
+              className="relative size-20 rounded-lg border border-[var(--mac-window-border)] object-cover transition-transform duration-300 hover:scale-105 sm:size-24"
+              priority
+            />
+          </div>
           <div className="min-w-0 flex-1 space-y-0">
             <h1 className="flex flex-wrap items-center gap-2 text-xl font-bold tracking-tight text-[var(--mac-fg)] sm:text-2xl">
               Guddu Kumar
@@ -69,17 +72,14 @@ export default function Home() {
             I&apos;m Guddu Kr. Pandit, a passionate full-stack developer who
             loves building intuitive and powerful web applications.I enjoy combining clean UI design with efficient backend logic to
             create experiences that are useful, user-friendly, and modern.
-          </p>  
+          </p>
         </div>
       </section>
-
- 
-       
 
       {/* Tools */}
       <section
         id="tools"
-        className="border-t border-[var(--mac-window-border)] pt-8 sm:pt-10"
+        className="animate-in fade-in slide-in-from-bottom-4 border-t border-[var(--mac-window-border)] pt-8 delay-100 duration-700 fill-mode-both sm:pt-10"
         aria-labelledby="tools-heading"
       >
         <h2
@@ -90,7 +90,7 @@ export default function Home() {
         </h2>
         <div className="flex flex-wrap items-center gap-6 sm:gap-8 mb-5">
           <div
-            className="group flex flex-col items-center gap-2 text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
+            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
             title="Next.js"
           >
             <SiNextdotjs
@@ -100,7 +100,7 @@ export default function Home() {
             <span className="text-xs font-medium">Next.js</span>
           </div>
           <div
-            className="group flex flex-col items-center gap-2 text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
+            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
             title="React"
           >
             <SiReact
@@ -110,7 +110,7 @@ export default function Home() {
             <span className="text-xs font-medium">React</span>
           </div>
           <div
-            className="group flex flex-col items-center gap-2 text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
+            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
             title="TypeScript"
           >
             <SiTypescript
@@ -120,7 +120,7 @@ export default function Home() {
             <span className="text-xs font-medium">TypeScript</span>
           </div>
           <div
-            className="group flex flex-col items-center gap-2 text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
+            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
             title="JavaScript"
           >
             <SiJavascript
@@ -130,7 +130,7 @@ export default function Home() {
             <span className="text-xs font-medium">JavaScript</span>
           </div>
           <div
-            className="group flex flex-col items-center gap-2 text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
+            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
             title="Supabase"
           >
             <SiSupabase
@@ -140,7 +140,7 @@ export default function Home() {
             <span className="text-xs font-medium">Supabase</span>
           </div>
           <div
-            className="group flex flex-col items-center gap-2 text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
+            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
             title="Pinecone"
           >
             <Image
@@ -154,7 +154,7 @@ export default function Home() {
             <span className="text-xs font-medium">Pinecone</span>
           </div>
           <div
-            className="group flex flex-col items-center gap-2 text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
+            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
             title="Git"
           >
             <SiGit
@@ -169,7 +169,7 @@ export default function Home() {
       {/* Projects */}
       <section
         id="projects"
-        className="border-t border-[var(--mac-window-border)] pt-8 sm:pt-10"
+        className="animate-in fade-in slide-in-from-bottom-4 border-t border-[var(--mac-window-border)] pt-8 delay-200 duration-700 fill-mode-both sm:pt-10"
         aria-labelledby="projects-heading"
       >
         <h2
@@ -181,7 +181,7 @@ export default function Home() {
         <ul className="grid gap-4 sm:grid-cols-2" role="list">
           {projects.slice(0, 4).map((project) => (
             <li key={project.name}>
-              <article className="group relative flex h-full flex-col rounded-lg border border-dashed border-[var(--mac-window-border)] bg-[var(--mac-elevated)]/40 p-4 transition-colors hover:border-[var(--mac-muted)]/40 hover:bg-[var(--mac-elevated)]/80 sm:p-5">
+              <article className="card-hover group relative flex h-full flex-col rounded-lg border border-dashed border-[var(--mac-window-border)] bg-[var(--mac-elevated)]/40 p-4 hover:border-[var(--mac-muted)]/40 hover:bg-[var(--mac-elevated)]/80 sm:p-5">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-start gap-3">
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-md border border-[var(--mac-window-border)] bg-[var(--mac-window-bg)] text-[var(--mac-muted)]">
@@ -195,24 +195,29 @@ export default function Home() {
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="shrink-0 rounded-md p-1.5 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-window-bg)] hover:text-[var(--mac-fg)]"
+                    className="focus-ring shrink-0 rounded-md p-1.5 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-window-bg)] hover:text-[var(--mac-fg)]"
                     title={`Open ${project.name}`}
                   >
-                    <ExternalLink className="size-4" aria-hidden />
+                    <ExternalLink className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
                   </a>
                 </div>
-                <p className="mt-3 flex-1 text-xs leading-relaxed text-[var(--mac-muted)] sm:text-sm">
+                <p className="mt-3 line-clamp-3 flex-1 text-xs leading-relaxed text-[var(--mac-muted)] sm:text-sm">
                   {project.description}
                 </p>
                 <div className="mt-3 flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center rounded border border-[var(--mac-window-border)] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-[var(--mac-muted)] sm:text-xs">
+                  <span className="inline-flex items-center gap-1.5 rounded border border-[var(--mac-window-border)] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-[var(--mac-muted)] sm:text-xs">
+                    <span
+                      className="size-1.5 rounded-full"
+                      style={{ backgroundColor: techAccentColor(project.tech) }}
+                      aria-hidden
+                    />
                     {project.tech}
                   </span>
                   <a
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[10px] font-medium text-[var(--mac-status)] underline decoration-[var(--mac-status)]/30 underline-offset-2 transition-colors hover:decoration-[var(--mac-status)] sm:text-xs"
+                    className="focus-ring inline-flex items-center gap-1 text-[10px] font-medium text-[var(--mac-status)] underline decoration-[var(--mac-status)]/30 underline-offset-2 transition-colors hover:decoration-[var(--mac-status)] sm:text-xs"
                   >
                     GitHub
                     <ExternalLink className="size-3" aria-hidden />
@@ -226,11 +231,11 @@ export default function Home() {
           <Button
             asChild
             variant="outline"
-            className="rounded-lg border-[var(--mac-window-border)] bg-transparent font-mono text-[var(--mac-fg)] hover:bg-[var(--mac-elevated)]"
+            className="rounded-lg border-[var(--mac-window-border)] bg-transparent font-mono text-[var(--mac-fg)] transition-transform hover:-translate-y-0.5 hover:bg-[var(--mac-elevated)]"
           >
             <Link href="/projects" className="flex items-center gap-2">
               View all projects
-              <ArrowRight className="size-4" />
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>
@@ -243,13 +248,13 @@ export default function Home() {
       {/* Contact / footer */}
       <footer
         id="contact"
-        className="flex flex-col items-center justify-between gap-4 border-t border-[var(--mac-window-border)] pt-8 text-xs text-[var(--mac-muted)] sm:flex-row sm:pt-10"
+        className="animate-in fade-in flex flex-col items-center justify-between gap-4 border-t border-[var(--mac-window-border)] pt-8 text-xs text-[var(--mac-muted)] duration-700 sm:flex-row sm:pt-10"
       >
         <span>© 2026 Guddu Kumar</span>
         <nav className="flex items-center gap-5" aria-label="Contact links">
           <a
             href="mailto:guddukrp7661@gmail.com"
-            className="text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
+            className="focus-ring inline-flex text-[var(--mac-muted)] transition-all hover:-translate-y-0.5 hover:text-[var(--mac-fg)]"
             title="Email"
           >
             <Mail className="size-5" aria-hidden />
@@ -258,7 +263,7 @@ export default function Home() {
             href="https://github.com/Guddu-Pandit"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
+            className="focus-ring inline-flex text-[var(--mac-muted)] transition-all hover:-translate-y-0.5 hover:text-[var(--mac-fg)]"
             title="GitHub"
           >
             <Github className="size-5" aria-hidden />
@@ -267,7 +272,7 @@ export default function Home() {
             href="https://www.linkedin.com/in/guddu-pandit"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
+            className="focus-ring inline-flex text-[var(--mac-muted)] transition-all hover:-translate-y-0.5 hover:text-[var(--mac-fg)]"
             title="LinkedIn"
           >
             <Linkedin className="size-5" aria-hidden />
@@ -276,7 +281,7 @@ export default function Home() {
             href="https://x.com/guddukrpandit"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--mac-muted)] transition-colors hover:text-[var(--mac-fg)]"
+            className="focus-ring inline-flex text-[var(--mac-muted)] transition-all hover:-translate-y-0.5 hover:text-[var(--mac-fg)]"
             title="X"
           >
             <SiX className="size-5" aria-hidden />

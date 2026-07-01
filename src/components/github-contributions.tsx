@@ -23,7 +23,7 @@ export function GitHubContributions() {
   return (
     <section
       id="contributions"
-      className="animate-in fade-in slide-in-from-bottom-4 border-t border-[var(--mac-window-border)] pt-8 duration-700 fill-mode-both sm:pt-10"
+      className="animate-in fade-in slide-in-from-bottom-4 border-t border-[var(--mac-window-border)] pt-8 delay-300 duration-700 fill-mode-both sm:pt-10"
       aria-labelledby="contributions-heading"
     >
       <h2
@@ -32,7 +32,7 @@ export function GitHubContributions() {
       >
         GitHub Contributions
       </h2>
-      <div className="mb-5 overflow-x-auto rounded-lg border border-dashed border-[var(--mac-window-border)] bg-[var(--mac-elevated)]/40 p-4 text-[var(--mac-muted)] sm:p-5">
+      <div className="mac-scroll card-hover mb-5 overflow-x-auto rounded-lg border border-dashed border-[var(--mac-window-border)] bg-[var(--mac-elevated)]/40 p-4 text-[var(--mac-muted)] sm:p-5">
         <GitHubCalendar
           username="Guddu-Pandit"
           theme={calendarTheme}
