@@ -1,4 +1,4 @@
-import { experiences, hasCurrentExperience, isOngoingPeriod } from "@/lib/data";
+import { experiences, isOngoingPeriod } from "@/lib/data";
 
 function CurrentBadge() {
   return (
@@ -38,15 +38,12 @@ export function ExperienceSection() {
         Experience
       </h2>
       <div className="relative mb-5 space-y-8 border-l border-[var(--mac-window-border)]">
-        {hasCurrentExperience() && (
-          <span className="experience-dot-traveler" aria-hidden />
-        )}
         {experiences.map((exp, index) => {
           const current = isOngoingPeriod(exp.period);
           return (
             <div
               key={`${exp.title}-${exp.period}-${index}`}
-              className={`relative pl-6 transition-colors ${current ? "rounded-r-lg bg-[var(--mac-status)]/[0.04] py-2" : ""}`}
+              className="relative pl-6"
             >
               <div
                 className={`absolute -left-px top-1 size-2 -translate-x-1/2 rounded-full ${current ? "bg-[var(--mac-status)] shadow-[0_0_0_3px] shadow-[var(--mac-status)]/20" : "bg-[var(--mac-muted)]"}`}
