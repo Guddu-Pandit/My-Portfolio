@@ -64,16 +64,10 @@ function ToolIcon({
       style={{ "--tool-color": color } as React.CSSProperties}
       title={label}
     >
-      <span className="relative flex size-9 items-center justify-center sm:size-10">
-        <Icon
-          aria-hidden
-          className="absolute inset-0 size-9 opacity-0 blur-md transition-opacity duration-300 [color:var(--tool-color)] group-hover:opacity-70 sm:size-10"
-        />
-        <Icon
-          aria-hidden
-          className="relative size-9 text-[var(--mac-muted)] transition-colors duration-300 group-hover:[color:var(--tool-color)] sm:size-10"
-        />
-      </span>
+      <Icon
+        aria-hidden
+        className="size-9 text-[var(--mac-muted)] transition-colors duration-300 group-hover:[color:var(--tool-color)] sm:size-10"
+      />
       <span className="text-xs font-medium text-[var(--mac-muted)] transition-colors duration-300 group-hover:text-[var(--mac-fg)]">
         {label}
       </span>
