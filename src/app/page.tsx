@@ -24,6 +24,63 @@ import Image from "next/image";
 import { hasCurrentExperience, projects, techAccentColor } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
+function PineconeIcon({
+  className,
+  ...rest
+}: {
+  className?: string;
+  "aria-hidden"?: boolean;
+}) {
+  return (
+    <svg
+      viewBox="0 0 750 820"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      {...rest}
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M471.826 24.0936C464.116 14.9134 450.95 12.5551 440.534 18.4886L430.803 24.0322L430.679 24.0093L430.659 24.1139L325.85 83.8204L350.42 126.977L418.874 87.9814L402.035 179.236L450.859 188.251L467.791 96.4974L518.212 156.532L556.227 124.585L479.472 33.1965L479.503 33.0244L479.295 32.9859L471.826 24.0936ZM324.08 794.824C349.328 794.824 369.795 774.868 369.795 750.25C369.795 725.633 349.328 705.676 324.08 705.676C298.833 705.676 278.366 725.633 278.366 750.25C278.366 774.868 298.833 794.824 324.08 794.824ZM385.561 550.209L369.091 642.069L320.221 633.302L336.586 542.025L268.375 581.205L243.651 538.136L348.033 478.18L348.056 478.049L348.212 478.077L358.011 472.449C368.389 466.488 381.541 468.781 389.29 477.903L396.851 486.803L396.926 486.816L396.915 486.879L474.358 578.039L436.524 610.2L385.561 550.209ZM425.11 330.935L408.652 422.737L359.782 413.971L376.085 323.035L308.091 361.894L283.461 318.771L387.51 259.306L387.617 258.708L388.331 258.836L397.847 253.398C408.224 247.468 421.351 249.774 429.086 258.887L436.356 267.451L436.487 267.475L436.467 267.583L513.866 358.765L476.019 390.91L425.11 330.935ZM104.667 693.368L104.394 693.554L104.171 693.225L94.0456 690.317C83.3324 687.24 76.2404 677.074 77.0484 665.954L86.0484 542.094L133.05 545.511L127.574 620.869L200.8 571.19L227.251 610.203L155.455 658.912L228.701 679.952L215.694 725.26L104.667 693.368ZM590.296 744.836L590.301 744.844L590.291 744.852L586.988 755.721C583.802 766.205 573.813 773.109 562.883 772.383L552.56 771.698L551.9 772.167L551.517 771.629L436.444 763.986L439.566 716.95L516.258 722.044L466.25 651.718L504.651 624.395L555.789 696.309L577.921 623.484L623.009 637.195L590.296 744.836ZM725.177 489.19L725.322 489.215L725.29 489.393L730.774 499.22C736.394 509.291 734.104 521.931 725.309 529.389L717.018 536.42L716.96 536.747L716.688 536.699L627.257 612.532L596.06 575.717L654.901 525.823L566.796 510.314L575.158 462.783L663.903 478.404L626.686 411.712L668.814 388.189L725.177 489.19ZM634.493 282.027L554.909 324.863L532.047 282.364L610.263 240.264L538.372 211.176L556.464 166.435L665.478 210.544L665.964 210.283L666.279 210.868L676.146 214.861C686.737 219.146 692.871 230.276 690.839 241.522L688.81 252.753L688.826 252.782L688.802 252.795L668.319 366.171L620.841 357.589L634.493 282.027ZM100.963 381.58L189.25 396.607L181.156 444.185L92.111 429.029L130.083 495.958L88.1229 519.778L30.7057 418.577L30.665 418.57L30.6735 418.52L25.1727 408.825C19.4828 398.796 21.6815 386.142 30.4207 378.621L38.6678 371.524L38.7583 370.992L39.1988 371.067L127.517 295.067L158.982 331.653L100.963 381.58ZM234.324 175.801L293.072 241.268L257.168 273.506L197.06 206.523L183.065 282.822L135.61 274.113L156.332 161.138L156.228 161.021L156.379 160.886L158.474 149.463C160.507 138.378 169.941 130.177 181.199 129.708L191.582 129.276L192.131 128.783L192.539 129.236L310.473 124.33L312.478 172.55L234.324 175.801Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function ToolIcon({
+  icon: Icon,
+  label,
+  color,
+}: {
+  icon: React.ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
+  label: string;
+  color: string;
+}) {
+  return (
+    <div
+      className="group flex flex-col items-center gap-2 p-2"
+      style={{ "--tool-color": color } as React.CSSProperties}
+      title={label}
+    >
+      <span className="relative flex size-9 items-center justify-center sm:size-10">
+        <Icon
+          aria-hidden
+          className="absolute inset-0 size-9 opacity-0 blur-md transition-opacity duration-300 [color:var(--tool-color)] group-hover:opacity-70 sm:size-10"
+        />
+        <Icon
+          aria-hidden
+          className="relative size-9 text-[var(--mac-muted)] transition-colors duration-300 group-hover:[color:var(--tool-color)] sm:size-10"
+        />
+      </span>
+      <span className="text-xs font-medium text-[var(--mac-muted)] transition-colors duration-300 group-hover:text-[var(--mac-fg)]">
+        {label}
+      </span>
+    </div>
+  );
+}
+
 export default function Home() {
   const isEmployed = hasCurrentExperience();
 
@@ -89,80 +146,13 @@ export default function Home() {
           Tools
         </h2>
         <div className="flex flex-wrap items-center gap-6 sm:gap-8 mb-5">
-          <div
-            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
-            title="Next.js"
-          >
-            <SiNextdotjs
-              className="size-9 transition-colors group-hover:text-[var(--mac-fg)] sm:size-10"
-              aria-hidden
-            />
-            <span className="text-xs font-medium">Next.js</span>
-          </div>
-          <div
-            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
-            title="React"
-          >
-            <SiReact
-              className="size-9 transition-[color] group-hover:[color:#61DAFB] sm:size-10"
-              aria-hidden
-            />
-            <span className="text-xs font-medium">React</span>
-          </div>
-          <div
-            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
-            title="TypeScript"
-          >
-            <SiTypescript
-              className="size-9 transition-[color] group-hover:[color:#3178C6] sm:size-10"
-              aria-hidden
-            />
-            <span className="text-xs font-medium">TypeScript</span>
-          </div>
-          <div
-            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
-            title="JavaScript"
-          >
-            <SiJavascript
-              className="size-9 transition-[color] group-hover:[color:#F7DF1E] sm:size-10"
-              aria-hidden
-            />
-            <span className="text-xs font-medium">JavaScript</span>
-          </div>
-          <div
-            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
-            title="Supabase"
-          >
-            <SiSupabase
-              className="size-9 transition-[color] group-hover:[color:#3ECF8E] sm:size-10"
-              aria-hidden
-            />
-            <span className="text-xs font-medium">Supabase</span>
-          </div>
-          <div
-            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
-            title="Pinecone"
-          >
-            <Image
-              src="/pinecone-icon.svg"
-              alt="Pinecone"
-              width={40}
-              height={40}
-              className="size-9 object-contain opacity-70 transition-opacity group-hover:opacity-100 dark:invert sm:size-10"
-              aria-hidden
-            />
-            <span className="text-xs font-medium">Pinecone</span>
-          </div>
-          <div
-            className="card-hover group flex flex-col items-center gap-2 rounded-lg p-2 text-[var(--mac-muted)] transition-colors hover:bg-[var(--mac-elevated)] hover:text-[var(--mac-fg)]"
-            title="Git"
-          >
-            <SiGit
-              className="size-9 transition-[color] group-hover:[color:#F05032] sm:size-10"
-              aria-hidden
-            />
-            <span className="text-xs font-medium">Git</span>
-          </div>
+          <ToolIcon icon={SiNextdotjs} label="Next.js" color="var(--mac-fg)" />
+          <ToolIcon icon={SiReact} label="React" color="#61DAFB" />
+          <ToolIcon icon={SiTypescript} label="TypeScript" color="#3178C6" />
+          <ToolIcon icon={SiJavascript} label="JavaScript" color="#F7DF1E" />
+          <ToolIcon icon={SiSupabase} label="Supabase" color="#3ECF8E" />
+          <ToolIcon icon={PineconeIcon} label="Pinecone" color="var(--mac-fg)" />
+          <ToolIcon icon={SiGit} label="Git" color="#F05032" />
         </div>
       </section>
 
